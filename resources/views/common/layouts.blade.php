@@ -25,8 +25,8 @@
 
             @section('leftmenu')
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">学生列表</a>
-                    <a href="#" class="list-group-item">新增学生</a>
+                    <a href="{{url('student/index')}}" class="list-group-item {{Request::getPathInfo()=='/student/index' ? 'active' : ''}}">学生列表</a>
+                    <a href="{{url('student/create')}}" class="list-group-item {{Request::getPathInfo()=='/student/create' ? 'active' : ''}}">新增学生</a>
                 </div>
             @show
         </div>   
@@ -39,7 +39,7 @@
 </div><!-- 尾部 -->
 @section('footer')
     <div class="jumbotron" style="margin: 0;">
-        <div class="container"><span> @2016 imooc </span></div>
+        <div class="container"><span> WMight </span></div>
     </div>
 @show
 <script src="{{asset('static/jquery/jquery-1.9.0.min.js')}}"></script>

@@ -1,7 +1,7 @@
 <?php
 
 
-Route::get('student/index',['uses'=>'StudentController@index']);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,6 +12,11 @@ Route::get('student/index',['uses'=>'StudentController@index']);
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('student/index',['uses'=>'StudentController@index']);
+Route::any('student/create',['uses'=>'StudentController@create']);
+Route::any('student/save',['uses'=>'StudentController@save']);
+// Route::group(['middleware'=>['web']], function(){
+// });
 
 Route::get('/', function () {
     return view('welcome');
