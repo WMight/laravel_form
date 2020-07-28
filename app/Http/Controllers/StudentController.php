@@ -79,7 +79,7 @@ class StudentController extends Controller
             return redirect()->back();
         }
     }
-
+    //修改表单
     public function update(Request $request, $id)
     {
         $student = Student::find($id);
@@ -113,5 +113,22 @@ class StudentController extends Controller
         return view('student.update',[
             'student'=>$student
         ]);
+    }
+    //表单详细
+    public function detail($id){
+        $student = Student::find($id);
+        return view('student.detail',[
+            'student' => $student
+        ]);
+    }
+    //表单删除
+    public function delete($id){
+        $student = Student::find($id); 
+
+        if($student->delete()){
+            return redirect('student/index')->with('success','删除成功-'.$id);
+        }else{
+            return redirect('student/index')->with('error','删除失败-'.$id);
+        }
     }
 }

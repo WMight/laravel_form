@@ -24,7 +24,11 @@
                         <td>{{$student->age}}</td>
                         <td>{{$student->sex1($student->sex)}}</td>
                         <td>{{date('Y-m-d',$student->created_at)}}</td>
-                        <td><a href="">详情</a> <a href="{{url('student/update', ['id'=>$student->id])}}">修改</a> <a href="">删除</a></td>
+                        <td>
+                            <a href="{{url('student/detail', ['id'=>$student->id])}}">详情</a>
+                            <a href="{{url('student/update', ['id'=>$student->id])}}">修改</a> 
+                            <a href="{{url('student/delete', ['id'=>$student->id])}}" onclick="if (confirm('确定要删除吗？') == false) return false;">删除</a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
