@@ -24,7 +24,7 @@ class Student extends Model
     {
         return $val;
     }
-    public function sex($ind = null)
+    public function sex1($ind = null)
     {
         $arr = [
             self::SEX_UN =>'未知',
